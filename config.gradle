@@ -1,0 +1,33 @@
+ext {
+    plugins = [
+            application: 'com.android.application',
+            greendao   : 'org.greenrobot.greendao'
+    ]
+
+    android = [
+            applicationId    : "com.yanzhenjie.searchview.sample",
+            compileSdkVersion: 25,
+            buildToolsVersion: "25.0.2",
+
+            minSdkVersion    : 11,
+            targetSdkVersion : 25,
+
+            versionCode      : 11,
+            versionName      : "1.1",
+
+            jackOptions      : true
+    ]
+
+    greendao = [
+            schemaVersion: 1,
+            targetGenDir : "src/main/java",
+            daoPackage   : "com.yanzhenjie.searchview.sample.greendao"
+    ]
+
+    dependencies = [
+            design   : 'com.android.support:design:25.3.1',
+            appcompat: 'com.android.support:appcompat-v7:25.3.1',
+
+            greendao : 'org.greenrobot:greendao:3.2.2',
+    ]
+}
