@@ -20,13 +20,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="@dimen/dp_16"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.yanzhenjie.searchview.sample.MainActivity"
+    tools:context="com.yanzhenjie.searchview.sample.SearchActivity"
     tools:showIn="@layout/activity_main">
 
     <TextView
+        android:id="@+id/tv_message"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"/>
+        android:text="@string/ui_hint"
+        android:textSize="@dimen/sp_16"/>
 
 </LinearLayout>

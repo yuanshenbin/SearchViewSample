@@ -17,16 +17,27 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+
+        <item name="actionOverflowMenuStyle">@style/OverflowPopupMenu</item>
+        <item name="android:dropDownListViewStyle">@style/DropDown</item>
     </style>
 
-    <style name="AppTheme.NoActionBar">
-        <item name="windowActionBar">false</item>
-        <item name="windowNoTitle">true</item>
+    <style name="AppTheme.Main"/>
+
+    <!-- DropDown -->
+    <style name="OverflowPopupMenu" parent="Widget.AppCompat.PopupMenu.Overflow">
+        <item name="android:popupBackground">@drawable/shape_circle_overflow_background</item>
+        <item name="overlapAnchor">true</item>
+    </style>
+
+    <!-- DropDown -->
+    <style name="DropDown" parent="Widget.AppCompat.ListView.DropDown">
+        <item name="android:background">@drawable/shape_circle_dropdown_background</item>
     </style>
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>

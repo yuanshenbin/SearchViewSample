@@ -14,11 +14,9 @@
     See the License for the specific language governing permissions and
     limitations under the License.
 -->
-<resources>
-    <string name="app_name">SearchViewSample</string>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <string name="ui_hint">Right click on the search button.</string>
+    <corners android:radius="@dimen/dp_2"/>
+    <solid android:color="@android:color/white"/>
 
-    <string name="title_search_user">User Search</string>
-    <string name="title_search_user_hint">Search user name</string>
-</resources>
+</shape>

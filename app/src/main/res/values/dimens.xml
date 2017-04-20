@@ -15,5 +15,13 @@
     limitations under the License.
 -->
 <resources>
-    <dimen name="fab_margin">16dp</dimen>
+
+    <dimen name="dp_10">10dp</dimen>
+    <dimen name="dp_12">12dp</dimen>
+    <dimen name="dp_16">16dp</dimen>
+    <dimen name="dp_2">2dp</dimen>
+
+    <dimen name="sp_12">12sp</dimen>
+    <dimen name="sp_14">14sp</dimen>
+    <dimen name="sp_16">16sp</dimen>
 </resources>

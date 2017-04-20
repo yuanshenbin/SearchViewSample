@@ -52,7 +52,7 @@ public class UserSearchProvider extends ContentProvider {
     @Nullable
     @Override
     public Uri insert(Uri uri, ContentValues values) {
-        long rowId = GreenDaoFactory.getInstance().getWritableDatabase().insert(UserInfoDao.TABLENAME, "", values);
+        long rowId = GreenDaoFactory.getInstance().getWritableDatabase().insert(ProviderInfo.TABLE_NAME, "", values);
         if (rowId > 0) {
             Uri rowUri = ContentUris.withAppendedId(ProviderInfo.CONTENT_URI, rowId);
             App.get().getContentResolver().notifyChange(rowUri, null);
@@ -65,7 +65,7 @@ public class UserSearchProvider extends ContentProvider {
     @Override
     public Cursor query(Uri uri, String[] projection, String selection, String[] selectionArgs, String sortOrder) {
         SQLiteQueryBuilder qb = new SQLiteQueryBuilder();
-        qb.setTables(UserInfoDao.TABLENAME);
+        qb.setTables(ProviderInfo.TABLE_NAME);
         switch (sUriMatcher.match(uri)) {
             case CODE_ITEM:
                 long id = ContentUris.parseId(uri);
@@ -76,7 +76,7 @@ public class UserSearchProvider extends ContentProvider {
         }
 
         SQLiteDatabase db = GreenDaoFactory.getInstance().getWritableDatabase();
-        Cursor cursor = qb.query(db, projection, selection, selectionArgs, null, null, sortOrder, "15");
+        Cursor cursor = qb.query(db, projection, selection, selectionArgs, null, null, sortOrder, "10");
         cursor.setNotificationUri(App.get().getContentResolver(), uri);
         return cursor;
     }
@@ -98,7 +98,7 @@ public class UserSearchProvider extends ContentProvider {
     @Override
     public int delete(Uri uri, String selection, String[] selectionArgs) {
         int count = GreenDaoFactory.getInstance().getWritableDatabase().delete(
-                UserInfoDao.TABLENAME,
+                ProviderInfo.TABLE_NAME,
                 selection,
                 selectionArgs);
         App.get().getContentResolver().notifyChange(uri, null);
@@ -108,7 +108,7 @@ public class UserSearchProvider extends ContentProvider {
     @Override
     public int update(Uri uri, ContentValues values, String selection, String[] selectionArgs) {
         int count = GreenDaoFactory.getInstance().getWritableDatabase().update(
-                UserInfoDao.TABLENAME,
+                ProviderInfo.TABLE_NAME,
                 values,
                 selection,
                 selectionArgs);
@@ -129,7 +129,6 @@ public class UserSearchProvider extends ContentProvider {
 
         public static final String ID = UserInfoDao.Properties.Id.columnName;
         public static final String USER_NAME = UserInfoDao.Properties.UserName.columnName;
-        public static final String USER_AGE = UserInfoDao.Properties.UserAge.columnName;
         public static final String USER_DES = UserInfoDao.Properties.UserDes.columnName;
 
     }
